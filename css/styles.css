@@ -2,14 +2,30 @@
 .main-header {
     text-align: center;   
 }
+
 .selection-content{
     display: flex;
     flex-direction: column;
 }
+
 .selection-btn{
     height: 32px;
-    background-color: darkseagreen;
     border: none;
     border-radius: 8px;
-    
+}
+
+.violet-color{
+    background-color: violet;
+}
+
+.coral-color{
+    background-color: coral;
+}
+
+.luas-segitiga-header{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin: 0px;
+    background-color: beige;
+    text-align: center;
 }

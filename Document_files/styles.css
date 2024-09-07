@@ -1,0 +1,15 @@
+/*Ini CSS*/
+.main-header {
+    text-align: center;   
+}
+.selection-content{
+    display: flex;
+    flex-direction: column;
+}
+.selection-btn{
+    height: 32px;
+    background-color: darkseagreen;
+    border: none;
+    border-radius: 8px;
+    
+}
