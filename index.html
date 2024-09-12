@@ -5,56 +5,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katik - Luas & Keliling Segitiga</title>
+
+    <!-- connecting index.html with style.css--> 
     <link rel="stylesheet" href="css\styles.css">
+    <!-- connecting index.html with java.script--> 
+    <script src="js\script.js"></script>
+
 </head>
 
 <body>
-    <header class="container">
-        <h1> Welcome to Katik </h1>
-        Hai Sobat Selamat Datang di Katik
-        <br>
-        Sebuah website untuk menghitung Luas dan Keliling Segitiga dengan cepat dan mudah
+    <header class="main-header">
+        <h1>Welcome to Katik</h1>
+        <p>Hai sobat, Selamat datang di Katik :]</p>
+        <p>Ini adalah web apps sederhana yang berfungsi untuk menghitung luas dan keliling bangun datar</p>
     </header>
 
+    <main>
+        <section class="selection-content">
+            <button type="button" class="selection-btn mediumseagreen-color" onclick="showForm('segitiga')">Segitiga</button>
+            <button type="button" class="selection-btn mediumturquoise-color" onclick="showForm('jajar-genjang')">Jajar Genjang</button>
+            <button type="button" class="selection-btn mediumslateblue-color" onclick="showForm('home')">Home</button>
+                </section>
 
-        <section class="calculator">
-            <div class="box">
-                <h2>Luas Segitiga</h2>
-                <img src="Lsegitiga1.png" alt="Triangle Diagram">
-                <p class="formula">Rumus: L = 1/2 × a × t</p>
-                <form id="luasForm">
-                    <label for="base">Nilai Alas:</label>
-                    <input type="number" id="base" name="base" placeholder="Nilai Alas" required>
-    
-                    <label for="height">Nilai Tinggi:</label>
-                    <input type="number" id="height" name="height" placeholder="Nilai Tinggi" required>
-    
-                    <button type="submit">Hitung Luas</button>
+        <section class="main-content" id="form-segitiga" style="display: none;">
+
+            <!-- Form Menghitung Luas Segitiga -->
+            <aside>
+                <header>
+                    <h1 class="luas-segitiga">Luas Segitiga</h1>
+                </header>
+
+                <article class="luas-segitiga-content">
+                    <div class="luas-segitiga-img"></div>
+                    <p>Rumus Luas Segitiga: L = 1/2 x a x t</p>
+                </article>
+
+                <hr />
+
+                <form>
+                    <header>
+                        <h1 class="luas-s-f-h">Hitung Luas Segitiga</h1>
+                    </header>
+
+                    <div class="input-wrapper">
+                        <label for="p.alas">Panjang Alas : </label>
+                        <input id="p.alas" type="number">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="tinggi">Tinggi : </label>
+                        <input id="tinggi" type="number">
+                    </div>
+
+                    <p id="result-luas-segitiga">Hasil Perhitungan Luas</p>
+                    <button type="button" onclick="hitungLuasSegitiga()">Hitung Luas</button>
+                    <button type="reset">Reset</button>
                 </form>
-                <p id="luasResult">Luas Segitiga: </p>
-                <p id="luasResult">Luas Segitiga: </p>
-                <p id="luasSteps"></p> 
+            </aside>
+
+            <!-- Form Menghitung Keliling Segitiga -->
+            <aside>
+                <header>
+                    <h1 class="luas-segitiga">Keliling Segitiga</h1>
+                </header>
+
+                <article class="luas-segitiga-content">
+                    <div class="luas-segitiga-img"></div>
+                    <p>Rumus Keliling Segitiga: K = s + s + s</p>
+                </article>
+
+                <hr />
+
+                <form>
+                    <header>
+                        <h1 class="luas-s-f-h">Hitung Keliling Segitiga</h1>
+                    </header>
+
+                    <div class="input-wrapper">
+                        <label for="s1">S1 : </label>
+                        <input id="s1" type="number">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="s2">S2 : </label>
+                        <input id="b" type="number">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="s">S3 : </label>
+                        <input id="s" type="number">
+                    </div>
+
+                    <p id="result-keliling-segitiga">Hasil Perhitungan Keliling</p>
+                    <button type="button" onclick="hitungKelilingSegitiga()">Hitung Keliling</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </aside>
+        </section>
+
+        <!-- Form Menghitung Jajar Genjang -->
+        <section class="main-content" id="form-jajar-genjang" style="display: none;">
             
-            </div>
-        </section>
+            <!-- Form Menghitung Luas Jajar Genjang -->
+            <aside>
+                <header>
+                    <h1 class="luas-jajar-genjang">Luas Jajar Genjang</h1>
+                </header>
 
-        <section class="calculator">
-            <div class="box">
-                <h2>Keliling Segitiga</h2>
-                    <img src="Kelsegitiga.png" alt="Triangle Diagram">
-                <p class="formula">Rumus: K = A + B + C</p>
-                <form id="kelilingForm">
-                    <label for="nilaiK">Nilai K:</label>
-                    <input type="number" id="nilaiK" name="K" placeholder="Nilai K" required>
-                    <button type="submit">Hitung Keliling</button>
+                <article class="luas-jajar-genjang-content">
+                    <div class="luas-jajar-genjang-img"></div>
+                    <p>Rumus Luas Jajar Genjang: L = a x t</p>
+                </article>
+
+                <hr />
+
+                <form>
+                    <header>
+                        <h1 class="luas-s-f-h">Hitung Luas Jajar Genjang</h1>
+                    </header>
+
+                    <div class="input-wrapper">
+                        <label for="alas-jg">Panjang Alas: </label>
+                        <input id="alas-jg" type="number">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="tinggi-jg">Tinggi: </label>
+                        <input id="tinggi-jg" type="number">
+                    </div>
+
+                    <p id="result-luas-jg">Hasil Perhitungan Luas</p>
+                    <button type="button" onclick="hitungLuasJajarGenjang()">Hitung Luas</button>
+                    <button type="reset">Reset</button>
                 </form>
+            </aside>
 
-                <p id="kelilingResult">Keliling Segitiga: </p>
-                <p id="kelilingResult">Keliling Segitiga: </p>
-                <p id="kelilingSteps"></p> 
-            </div>
+            <!-- Form Menghitung Keliling Jajar Genjang -->
+            <aside>
+                <header>
+                    <h1 class="luas-segitiga">Keliling Jajar Genjang</h1>
+                </header>
+
+                <article class="luas-jajar-genjang-content">
+                    <div class="luas-jajar-genjang-img"></div>
+                    <p>Rumus Keliling Jajar genjang: K = 2 x (a + b)</p>
+                </article>
+
+                <hr />
+
+                <form>
+                    <header>
+                        <h1 class="luas-s-f-h">Hitung Keliling Jajar Genjang</h1>
+                    </header>
+
+                    <div class="input-wrapper">
+                        <label for="sisi1-jg">Sisi a : </label>
+                        <input id="sisi1-jg" type="number">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="sisi2-jg">Sisi b : </label>
+                        <input id="sisi2-jg" type="number">
+                    </div>
+
+                    <p id="result-keliling-jajar-genjang">Hasil Perhitungan Keliling</p>
+                    <button type="button" onclick="hitungKelilingJajarGenjang()">Hitung Keliling</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </aside>
         </section>
+    </main>
 
-    <script src="js/script.js"></script>
+    <footer class="main-footer">
+        <p>© Amanda Paramita Salsabila</p>
+    </footer>
+
 </body>
+
 </html>
